@@ -1,5 +1,43 @@
 # Changelog
 
+## 10.16
+
+-   **NEW**: Drop support for Python 3.8.
+-   **NEW**: Snippets: Added `max_retries` and `backoff_retries` options to configure new retry logic for HTTP 429
+    errors (Too Many Requests client error).
+-   **NEW**: Caption: Prefix templates are now preserved exactly as specified allowing the insertion of HTML tags if
+    desired.
+-   **FIX**: Caption: Fix issue where manual numbers in auto were not respected appropriately.
+
+## 10.15
+
+-   **NEW**: SuperFences: Add `relaxed_headers` option which can tolerate bad content in the fenced code header. When
+    enabled, code blocks with bad content in the header will likely still convert into code blocks, often respecting
+    the specified language.
+-   **NEW**: Add type hints to the Blocks interface and a few additional files.
+-   **FIX**: Blocks: Fix some corner cases of nested blocks with lists.
+-   **FIX**: Tab and Tabbed: Fix a case where tabs could fail if `combine_header_slug` was enabled and there was no
+    header.
+
+## 10.14.3
+
+-   **FIX**: Blocks: An empty, raw block type should not cause an error.
+
+## 10.14.2
+
+-   **FIX**: Blocks: Fix some corner cases with `md_in_html`.
+
+## 10.14.1
+
+-   **FIX**: MagicLink: Ensure that repo names that start with `.` are handled correctly.
+-   **FIX**: FancyLists: Fix case were lists could be falsely created when a line started with `.` or `)`.
+
+## 10.14
+
+-   **NEW**: Blocks.HTML: Add new `custom` option to specify tags and the assumed handling for them when automatic mode
+    is assumed. This can also be used to override the handling for recognized tags with automatic handling.
+-   **FIX**: Fix tests to pass with Pygments 2.19+.
+
 ## 10.13
 
 -   **NEW**: Snippets: Allow multiple line numbers or line number blocks separated by `,`.

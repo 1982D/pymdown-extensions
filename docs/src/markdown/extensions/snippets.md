@@ -59,6 +59,10 @@ The dashes can be as few as 1 (`-8<-`) or longer if desired (`---8<---------`); 
 important thing is that the notation must reside on a line(s) by itself, and the path, must be quoted in the case of the
 single line notation.  If the file name is indented, the content will be indented to that level as well.
 
+/// note
+XML parsers are sensitive to dashes, so snippet syntax should use single dashes (`-8<-`) when placed within an XML.
+///
+
 You can temporarily disable the snippet by placing a `;` before the file name:
 
 ```
@@ -171,10 +175,10 @@ are always omitted.
 If we wanted to include a function from a Python source, we could specify the snippet as follows:
 
 ```python
-# --8<-- [start:func]
+# ;--8<-- [start:func]
 def my_function(var):
     pass
-# --8<-- [end:func]
+# ;--8<-- [end:func]
 ```
 
 And then just include it in our document:
@@ -233,9 +237,25 @@ If either of these is set to zero, the limits will be ignored.
 
 To pass arbitrary HTTP headers in every HTTP request use `url_request_headers`.
 
+When a URL returns a 429 (Too Many Requests) status code, the extension will automatically retry the request with linear
+backoff. The retry behavior can be configured with:
+
+- `max_retries`: Maximum number of retry attempts (default: 3)
+- `backoff_factor`: Backoff factor for retry attempts (default: 2)
+
+For example, with default settings, the retry sequence would be:
+
+- First retry: 2 seconds
+- Second retry: 4 seconds
+- Third retry: 6 seconds
+
 /// warning | Nested Snippets
 One thing to note though, if a snippet is included via a URL, all nested snippets within it must also be URLs. URL
 snippets are not allowed to reference local snippet files.
+///
+
+/// new | New 10.16
+`max_retries` and `backoff_retries` was introduced in 10.16.
 ///
 
 /// new | New 9.5

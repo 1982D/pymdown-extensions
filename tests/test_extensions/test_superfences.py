@@ -89,7 +89,7 @@ class TestHighlightTitle(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><span class="filename">My title</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><span class="filename">My title</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -105,7 +105,7 @@ class TestHighlightTitle(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">My title</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">My title</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div></td></tr></table></div>
             ''',  # noqa: E501
             True
@@ -136,10 +136,10 @@ class TestHighlightStrip(util.MdCase):
             ''',
             r'''
             <div class="highlight"><pre><span></span><code>
-            <span class="kn">import</span> <span class="nn">foo</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">foo</span>
 
 
-            <span class="kn">import</span> <span class="nn">bar</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">bar</span>
 
 
             </code></pre></div>
@@ -171,7 +171,7 @@ class TestHighlightAutoTitleOverride(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><span class="filename">My Title</span><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><span class="filename">My Title</span><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -187,7 +187,7 @@ class TestHighlightAutoTitleOverride(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><span class="filename">My Title</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><span class="filename">My Title</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -215,7 +215,7 @@ class TestHighlightLineWrapsInline(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><pre><span></span><code><span id="__my_span-0-2"><span class="linenos">2</span><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><pre><span></span><code><span id="__my_span-0-2"><span class="linenos">2</span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </span></code></pre></div>
             ''',  # noqa: E501
             True
@@ -243,7 +243,7 @@ class TestHighlightLineWrapsPymdownxInline(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><pre><span></span><code><span id="__my_span-0-2"><span class="linenos" data-linenos="2 "></span><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><pre><span></span><code><span id="__my_span-0-2"><span class="linenos" data-linenos="2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </span></code></pre></div>
             ''',  # noqa: E501
             True
@@ -271,7 +271,7 @@ class TestHighlightLineWrapsPymdownsTable(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__my_span-0-2"><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__my_span-0-2"><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </span></code></pre></div></td></tr></table></div>
             ''',  # noqa: E501
             True
@@ -299,7 +299,7 @@ class TestHighlightLineAnchorsInline(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><pre><span></span><code><a id="__my_span-0-2" name="__my_span-0-2"></a><span class="linenos">2</span><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><pre><span></span><code><a id="__my_span-0-2" name="__my_span-0-2"></a><span class="linenos">2</span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -327,7 +327,7 @@ class TestHighlightLineAnchorsPymdownxInline(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><pre><span></span><code><a id="__my_span-0-2" name="__my_span-0-2"></a><span class="linenos" data-linenos="2 "></span><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><pre><span></span><code><a id="__my_span-0-2" name="__my_span-0-2"></a><span class="linenos" data-linenos="2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -355,7 +355,7 @@ class TestHighlightLineAnchorsPymdownsTable(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__my_span-0-2" name="__my_span-0-2"></a><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__my_span-0-2" name="__my_span-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div></td></tr></table></div>
             ''',  # noqa: E501
             True
@@ -383,7 +383,7 @@ class TestHighlightAnchorLinenumInline(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><pre><span></span><code><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos">2</span></a><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos">2</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -399,7 +399,7 @@ class TestHighlightAnchorLinenumInline(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="highlight"><pre><span></span><code><a id="__codelineno-id-2" name="__codelineno-id-2"></a><a href="#__codelineno-id-2"><span class="linenos">2</span></a><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="highlight"><pre><span></span><code><a id="__codelineno-id-2" name="__codelineno-id-2"></a><a href="#__codelineno-id-2"><span class="linenos">2</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -427,7 +427,7 @@ class TestHighlightAnchorLinenumsPymdownxInline(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><pre><span></span><code><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -443,7 +443,7 @@ class TestHighlightAnchorLinenumsPymdownxInline(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="highlight"><pre><span></span><code><a id="__codelineno-id-2" name="__codelineno-id-2"></a><a href="#__codelineno-id-2"><span class="linenos" data-linenos="2 "></span></a><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="highlight"><pre><span></span><code><a id="__codelineno-id-2" name="__codelineno-id-2"></a><a href="#__codelineno-id-2"><span class="linenos" data-linenos="2 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -471,7 +471,7 @@ class TestHighlightAnchorLinenumsPymdownsTable(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div></td></tr></table></div>
             ''',  # noqa: E501
             True
@@ -500,7 +500,7 @@ class TestHighlightAnchorLinenumNameInline(util.MdCase):
             ```
             ''',
             r'''
-            <div class="highlight"><pre><span></span><code><a id="__my_span-0-2" name="__my_span-0-2"></a><a href="#__my_span-0-2"><span class="linenos">2</span></a><span class="kn">import</span> <span class="nn">test</span>
+            <div class="highlight"><pre><span></span><code><a id="__my_span-0-2" name="__my_span-0-2"></a><a href="#__my_span-0-2"><span class="linenos">2</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -531,12 +531,12 @@ class TestHighlightLines(util.MdCase):
             ```
             ''',
             '''
-            <div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">foo</span>
-            </span><span class="hll"><span class="kn">import</span> <span class="nn">boo.baz</span>
-            </span><span class="kn">import</span> <span class="nn">foo.bar.baz</span>
+            <div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span><span class="w"> </span><span class="nn">foo</span>
+            </span><span class="hll"><span class="kn">import</span><span class="w"> </span><span class="nn">boo.baz</span>
+            </span><span class="kn">import</span><span class="w"> </span><span class="nn">foo.bar.baz</span>
 
-            <span class="hll"><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
-            </span>   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="hll"><span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="p">:</span>
+            </span>   <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="hll">       <span class="bp">self</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="kc">None</span>
             </span><span class="hll">       <span class="bp">self</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="kc">None</span>
             </span>       <span class="bp">self</span><span class="o">.</span><span class="n">baz</span> <span class="o">=</span> <span class="kc">None</span>
@@ -563,12 +563,12 @@ class TestHighlightLines(util.MdCase):
             ```
             ''',
             '''
-            <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">foo</span>
-            <span class="kn">import</span> <span class="nn">boo.baz</span>
-            <span class="kn">import</span> <span class="nn">foo.bar.baz</span>
+            <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">foo</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">boo.baz</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">foo.bar.baz</span>
 
-            <span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
-               <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="p">:</span>
+               <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
                    <span class="bp">self</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="kc">None</span>
                    <span class="bp">self</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="kc">None</span>
                    <span class="bp">self</span><span class="o">.</span><span class="n">baz</span> <span class="o">=</span> <span class="kc">None</span>
@@ -595,12 +595,12 @@ class TestHighlightLines(util.MdCase):
             ```
             ''',
             '''
-            <div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">foo</span>
-            </span><span class="hll"><span class="kn">import</span> <span class="nn">boo.baz</span>
-            </span><span class="hll"><span class="kn">import</span> <span class="nn">foo.bar.baz</span>
+            <div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span><span class="w"> </span><span class="nn">foo</span>
+            </span><span class="hll"><span class="kn">import</span><span class="w"> </span><span class="nn">boo.baz</span>
+            </span><span class="hll"><span class="kn">import</span><span class="w"> </span><span class="nn">foo.bar.baz</span>
             </span><span class="hll">
-            </span><span class="hll"><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
-            </span><span class="hll">   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            </span><span class="hll"><span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="p">:</span>
+            </span><span class="hll">   <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             </span><span class="hll">       <span class="bp">self</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="kc">None</span>
             </span><span class="hll">       <span class="bp">self</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="kc">None</span>
             </span><span class="hll">       <span class="bp">self</span><span class="o">.</span><span class="n">baz</span> <span class="o">=</span> <span class="kc">None</span>
@@ -660,7 +660,7 @@ class TestSuperFencesClassesIds(util.MdCase):
             ```
             ''',
             r'''
-            <div class="more highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div class="more highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -676,7 +676,7 @@ class TestSuperFencesClassesIds(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -692,7 +692,7 @@ class TestSuperFencesClassesIds(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -708,7 +708,7 @@ class TestSuperFencesClassesIds(util.MdCase):
             ```
             ''',
             r'''
-            <div id="class" class="test class highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div id="class" class="test class highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -758,7 +758,7 @@ class TestSuperFencesClassesIdsAttrList(util.MdCase):
             ```
             ''',
             r'''
-            <div class="more highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div class="more highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -774,7 +774,7 @@ class TestSuperFencesClassesIdsAttrList(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -790,7 +790,7 @@ class TestSuperFencesClassesIdsAttrList(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -806,7 +806,7 @@ class TestSuperFencesClassesIdsAttrList(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="highlight" data-attr="test"><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="highlight" data-attr="test"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div>
             ''',  # noqa: E501
             True
@@ -822,7 +822,7 @@ class TestSuperFencesClassesIdsAttrList(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="highlight" data-attr="test"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="highlight" data-attr="test"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div></td></tr></table></div>
             ''',  # noqa: E501
             True
@@ -838,7 +838,7 @@ class TestSuperFencesClassesIdsAttrList(util.MdCase):
             ```
             ''',
             r'''
-            <div id="id" class="test class highlight" data-attr="test"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">test</span>
+            <div id="id" class="test class highlight" data-attr="test"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
             </code></pre></div></td></tr></table></div>
             ''',  # noqa: E501
             True
@@ -1630,6 +1630,157 @@ class TestSuperFencesCustomValidatorBroken(util.MdCase):
             ''',
             '''
             <div class="highlight"><pre><span></span><code>doesn&#39;t matter
+            </code></pre></div>
+            ''',
+            True
+        )
+
+
+class TestHighlightRelaxedHeaders(util.MdCase):
+    """Test relaxed header cases."""
+
+    extension = ['pymdownx.highlight', 'pymdownx.superfences', 'attr_list']
+    extension_configs = {
+        'pymdownx.superfences': {
+            'relaxed_headers': True,
+            'custom_fences': [
+                {
+                    'name': 'test',
+                    'class': 'test',
+                    'format': custom_format,
+                    'validator': custom_validator_except
+                },
+                {
+                    'name': 'test2',
+                    'class': 'test',
+                    'format': custom_format,
+                    'validator': custom_validator_exploder
+                }
+            ]
+        }
+    }
+
+    def test_custom_fail_exception(self):
+        """Test custom fences forced exception."""
+
+        with self.assertRaises(SuperFencesException):
+            self.check_markdown(
+                r'''
+                ```test [1]
+                test
+                ```
+                ''',
+                '',
+                True
+            )
+
+    def test_custom_fail_exception_relaxed(self):
+        """Test custom fences relaxed forced exception."""
+
+        self.check_markdown(
+            r'''
+            ```test2 [1]
+            test
+            ```
+            ''',
+            '''
+            <div class="highlight"><pre><span></span><code>test
+            </code></pre></div>
+            ''',
+            True
+        )
+
+    def test_bad_lang(self):
+        """Test bad language."""
+
+        self.check_markdown(
+            r'''
+            ```bad
+            test
+            ```
+            ''',
+            '''
+            <div class="highlight"><pre><span></span><code>test
+            </code></pre></div>
+            ''',
+            True
+        )
+
+    def test_bad_option(self):
+        """Test bad options."""
+
+        self.check_markdown(
+            r'''
+            ```pycon bad="My title"
+            >>> import test
+            ```
+            ''',
+            r'''
+            <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
+            </code></pre></div>
+            ''',  # noqa: E501
+            True
+        )
+
+    def test_bad_attribute(self):
+        """Test bad attribute."""
+
+        self.check_markdown(
+            r'''
+            ```pycon {.class <nonsense>!!!}
+            >>> import test
+            ```
+            ''',
+            r'''
+            <div class="class highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
+            </code></pre></div>
+            ''',  # noqa: E501
+            True
+        )
+
+    def test_bad_attribute_full(self):
+        """Test bad attribute full."""
+
+        self.check_markdown(
+            r'''
+            ```{.pycon .class <nonsense>!!!}
+            >>> import test
+            ```
+            ''',
+            r'''
+            <div class="class highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
+            </code></pre></div>
+            ''',  # noqa: E501
+            True
+        )
+
+    def test_bad_header(self):
+        """Test bad header."""
+
+        self.check_markdown(
+            r'''
+            ```pycon [nonsense]
+            >>> import test
+            ```
+            ''',
+            r'''
+            <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">test</span>
+            </code></pre></div>
+            ''',  # noqa: E501
+            True
+        )
+
+    def test_nonsense(self):
+        """Test only nonsense."""
+
+        self.check_markdown(
+            r'''
+            ```[nonsense]
+            >>> import test
+            ```
+            ''',
+            r'''
+            <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; import test
             </code></pre></div>
             ''',
             True

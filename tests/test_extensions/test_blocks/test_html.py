@@ -6,6 +6,29 @@ class TestBlocksHTML(util.MdCase):
     """Test Blocks HTML cases."""
 
     extension = ['pymdownx.blocks.html', 'md_in_html']
+    extension_configs = {
+        'pymdownx.blocks.html': {
+            'custom': [
+                {'tag': 'custom', 'mode': 'block'}
+            ]
+        }
+    }
+
+
+    def test_raw_empty_block(self):
+        """Test that raw empty blocks are handled properly."""
+
+        self.check_markdown(
+            R'''
+            /// html | pre
+            ///
+            ''',
+            R'''
+            <pre></pre>
+            ''',
+            True
+        )
+
 
     def test_bad_tag(self):
         """Test bad HTML tag."""
@@ -320,6 +343,41 @@ class TestBlocksHTML(util.MdCase):
             '''
             <script>const el = document.querySelector('div');
             el.innerHTML = '<span>test</span></script>
+            ''',
+            True
+        )
+
+    def test_custom(self):
+        """Test custom block handling."""
+
+        self.check_markdown(
+            R'''
+            /// html | custom
+            - a
+            - b
+            ///
+            ''',
+            '''
+            <custom><ul><li>a</li><li>b</li></ul></custom>
+            ''',
+            True
+        )
+
+    def test_custom_override(self):
+        """Test custom block handling but mode is overridden."""
+
+        self.check_markdown(
+            R'''
+            /// html | custom
+                markdown: inline
+
+            - a
+            - b
+            ///
+            ''',
+            '''
+            <custom>- a
+            - b</custom>
             ''',
             True
         )

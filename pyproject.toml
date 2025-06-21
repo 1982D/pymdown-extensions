@@ -9,7 +9,7 @@ name = "pymdown-extensions"
 description = "Extension pack for Python Markdown."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 authors = [
     { name = "Isaac Muse", email = "Isaac.Muse@gmail.com" },
 ]
@@ -39,7 +39,7 @@ allow-direct-references = true
 
 [project.optional-dependencies]
 extra = [
-    "Pygments>=2.12"
+    "Pygments>=2.19.1"
 ]
 
 [tool.hatch.build.targets.sdist]
@@ -75,6 +75,19 @@ include = [
 ]
 
 [tool.hatch.metadata.hooks.custom]
+
+[tool.mypy]
+files = [
+    "pymdownx/blocks/block.py"
+]
+strict = true
+show_error_codes = true
+
+[[tool.mypy.overrides]]
+module = [
+    "pymdownx.superfences"
+]
+ignore_errors = true
 
 [tool.ruff]
 line-length = 120
@@ -126,7 +139,7 @@ legacy_tox_ini = """
     [tox]
     isolated_build = true
     envlist =
-        {py38,py39,py310,py311,py312,py313}, lint, documents
+        {py39,py310,py311,py312,py313}, lint, documents
 
     [testenv]
     passenv = LANG
@@ -134,6 +147,7 @@ legacy_tox_ini = """
         .[extra]
         -r requirements/test.txt
     commands=
+        "{envpython}" -m mypy
         {envbindir}/py.test --cov pymdownx --cov-append {toxinidir}
         {envbindir}/coverage html -d {envtmpdir}/coverage
         {envbindir}/coverage xml

@@ -13,7 +13,6 @@ import * as sassCompiler from "sass"
 import postcss from "gulp-postcss"
 import scss from "postcss-scss"
 import autoprefixer from "autoprefixer"
-import cleanCSS from "gulp-clean-css"
 import childProcess from "child_process"
 import gulpif from "gulp-if"
 import concat from "gulp-concat"
@@ -21,7 +20,7 @@ import mqpacker from "css-mqpacker"
 import terser from '@rollup/plugin-terser'
 import {rollup} from "rollup"
 import {babel as rollupBabel, getBabelOutputPlugin} from "@rollup/plugin-babel"
-import stylelint from "gulp-stylelint"
+import gStylelintEsm from 'gulp-stylelint-esm'
 import eslint from "gulp-eslint"
 import rev from "gulp-rev"
 import revReplace from "gulp-rev-replace"
@@ -63,7 +62,7 @@ const config = {
       "./docs/theme/assets/pymdownx-extras/*.js",
       "./docs/theme/assets/pymdownx-extras/*.js.map"
     ],
-    gulp: "gulpfile.babel.js",
+    gulp: "gulpfile.babel.mjs",
     mkdocsSrc: "./docs/src/mkdocs.yml"
   },
   folders: {
@@ -178,10 +177,10 @@ gulp.task("scss:build:sass", () => {
         "node_modules/modularscale-sass/stylesheets",
         "node_modules/material-design-color",
         "node_modules/material-shadows"],
-      silenceDeprecations: ['legacy-js-api']
+      silenceDeprecations: ['legacy-js-api'],
+      style: "compressed"
     }).on("error", sass.logError))
     .pipe(postcss(plugins))
-    .pipe(gulpif(config.compress.enabled, cleanCSS()))
     .pipe(
       vinylPaths(
         filepath => {
@@ -212,7 +211,7 @@ gulp.task("scss:build", gulp.series("scss:build:sass", () => {
 gulp.task("scss:lint", () => {
   return gulp.src(config.files.scss)
     .pipe(
-      stylelint({
+      gStylelintEsm({
         customSyntax: scss,
         reporters: [
           {formatter: "string", console: true}
